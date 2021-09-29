@@ -5,7 +5,7 @@ Data analysis of strength training exercises
 
 ## Programming
 
-[Schedule and Warm-Up Routine](https://docs.google.com/spreadsheets/d/1SyOB_r6XOENmAunPZwkslgBb2Ltgzxn3EmezelEKQ5s/edit?usp=sharing).
+[Schedule and Warm-Up Routine](https://docs.google.com/spreadsheets/d/1SyOB_r6XOENmAunPZwkslgBb2Ltgzxn3EmezelEKQ5s/edit?usp=sharing)
 
 
 ## Technique
@@ -15,7 +15,7 @@ Data analysis of strength training exercises
 
 ## Data
 
-A google form was used to document strength progress. Data visualizations are created from the following .csv file on [google drive](https://docs.google.com/spreadsheets/d/1F2IPfClwYT3qm4VbRAwbtanyX0AFURBW-uvPVcoMV-8/edit?usp=sharing).
+Visualizations of [CSV data file](https://docs.google.com/spreadsheets/d/1F2IPfClwYT3qm4VbRAwbtanyX0AFURBW-uvPVcoMV-8/edit?usp=sharing) produced by Google Form
 
 
 ## Strength Progression with Warm-Ups
