@@ -5,7 +5,7 @@ Data analysis of strength training exercises
 
 ## Programming
 
-Programming details can be referenced at [this sheet](https://docs.google.com/spreadsheets/d/1SyOB_r6XOENmAunPZwkslgBb2Ltgzxn3EmezelEKQ5s/edit?usp=sharing).
+[Schedule and Warm-Up Routine](https://docs.google.com/spreadsheets/d/1SyOB_r6XOENmAunPZwkslgBb2Ltgzxn3EmezelEKQ5s/edit?usp=sharing).
 
 
 ## Technique
@@ -23,10 +23,6 @@ A google form was used to document strength progress. Data visualizations are cr
 ### Overall
 
 ![](strength_timeline.png)
-
-### By Exercise
-
-![](strength_timeline_facet.png)
 
 
 ## Maximum Strength Progression
