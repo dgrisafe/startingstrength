@@ -10,9 +10,7 @@ Programming details can be referenced at [this sheet](https://docs.google.com/sp
 
 ## Technique
 
-### Press
-
-[Learning to Press](https://www.youtube.com/watch?v=8dacy5hjaE8)
+* [Learning to Press](https://www.youtube.com/watch?v=8dacy5hjaE8)
 
 
 ## Data
