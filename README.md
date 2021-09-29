@@ -15,22 +15,19 @@ Data analysis of strength training exercises
 
 ## Data
 
-Visualizations of [CSV data file](https://docs.google.com/spreadsheets/d/1F2IPfClwYT3qm4VbRAwbtanyX0AFURBW-uvPVcoMV-8/edit?usp=sharing) produced by Google Form
+[CSV data file](https://docs.google.com/spreadsheets/d/1F2IPfClwYT3qm4VbRAwbtanyX0AFURBW-uvPVcoMV-8/edit?usp=sharing) produced by Google Form and used for visualization
 
 
-## Strength Progression with Warm-Ups
+## Visualization
 
-### Overall
+### Strength Progression with Warm-Ups
 
 ![](strength_timeline.png)
 
-
-## Maximum Strength Progression
-
-### Max Overall
+### Maximum Strength Progression
 
 ![](strength_timeline_max.png)
 
-### Max by Exercise
+### Maximum Strength Progression by Exercise
 
 ![](strength_timeline_max_facet.png)
