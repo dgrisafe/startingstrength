@@ -1,6 +1,6 @@
 # startingstrength
 
-Data analysis of strength training exercises
+Resources and data analysis of strength training exercises
 
 
 ## Programming
