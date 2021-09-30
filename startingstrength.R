@@ -21,6 +21,16 @@ df_format <- df_data %>%
     date = lubridate::date(date_time)
   )
 
+# color palate for lift exercises
+color_exercise <- c(
+  "Squat" = "#cc0000",
+  "Press" = "#6aa84f",
+  "Deadlift" = "#3c78d8",
+  "Bench Press" = "#674ea7",
+  "Power Clean" = "#000000",
+  "Chin-Ups" = "#000000",
+  "Back Extension" = "#000000"
+)
 
 # function to create basic plot
 plot_t_basic <- function(df){
@@ -28,6 +38,7 @@ plot_t_basic <- function(df){
     ggplot(aes(x = date_time, y = weight, group = exercise, color = exercise)) +
     geom_line() +
     theme_cowplot() +
+    scale_color_manual(values = color_exercise) +
     ylab("Weight (lbs)") +
     xlab("Date") +
     theme(
