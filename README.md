@@ -25,14 +25,14 @@ Resources and data analysis of strength training exercises
 
 ## Visualization
 
-### Strength Progression with Warm-Ups
-
-![](strength_timeline.png)
-
 ### Maximum Strength Progression
 
 ![](strength_timeline_max.png)
 
+### Strength Progression with Warm-Ups
+
+![](strength_timeline.png)
+
 ### Maximum Strength Progression by Exercise
 
-![](strength_timeline_max_facet.png)
+![](strength_timeline_facet.png)
