@@ -3,6 +3,22 @@ library(gsheet) # https://cran.r-project.org/web/packages/gsheet/gsheet.pdf
 library(cowplot)
 source("fun_save_png.R")
 
+
+# exercises lifts
+exercise_names <- c("Squat", "Bench Press", "Press", "Deadlift", "Power Clean", "Chin-Ups", "Back Extension")
+
+# color palate for lift exercises
+color_exercise <- c(
+  "Squat" = "#cc0000",
+  "Bench Press" = "#674ea7",
+  "Press" = "#6aa84f",
+  "Deadlift" = "#3c78d8",
+  "Power Clean" = "#000000",
+  "Chin-Ups" = "#000000",
+  "Back Extension" = "#000000"
+)
+
+
 # load url
 url <- "https://docs.google.com/spreadsheets/d/1F2IPfClwYT3qm4VbRAwbtanyX0AFURBW-uvPVcoMV-8/edit?usp=sharing"
 
@@ -16,21 +32,11 @@ colnames(df_data) <- c("date_time", "exercise", "weight", "reps", "sets", "notes
 # format data types
 df_format <- df_data %>% 
   dplyr::mutate(
-    exercise = factor(exercise, levels = unique(exercise)),
+    exercise = factor(exercise, levels = exercise_names),
     date_time = lubridate::mdy_hms(date_time),
     date = lubridate::date(date_time)
   )
 
-# color palate for lift exercises
-color_exercise <- c(
-  "Squat" = "#cc0000",
-  "Press" = "#6aa84f",
-  "Deadlift" = "#3c78d8",
-  "Bench Press" = "#674ea7",
-  "Power Clean" = "#000000",
-  "Chin-Ups" = "#000000",
-  "Back Extension" = "#000000"
-)
 
 # function to create basic plot
 plot_t_basic <- function(df){
