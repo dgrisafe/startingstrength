@@ -11,7 +11,7 @@ construct_download_url(url, format = "csv")
 
 # load data from google sheet
 df_data <- read.csv(text=gsheet2text(url,format='csv'), stringsAsFactors = FALSE)
-colnames(df_data) <- c("date_time", "exercise", "weight", "reps", "sets")
+colnames(df_data) <- c("date_time", "exercise", "weight", "reps", "sets", "notes")
 
 # format data types
 df_format <- df_data %>% 
