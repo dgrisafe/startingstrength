@@ -63,7 +63,10 @@ plot_t_facet <- function(p_t_basic) {
 # Plot w/Warm Ups
 
   ## create basic plot
-  p_str_time <- df_format %>% plot_t_basic()
+  p_str_time <- df_format %>% 
+    # remove first set with empty barbell (45 lbs)
+    dplyr::filter(!(weight == 45)) %>% 
+    plot_t_basic()
   save_png("./strength_timeline.png", p_str_time)
   
   ## create facet plot
