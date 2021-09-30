@@ -5,7 +5,7 @@ source("fun_save_png.R")
 
 
 # exercises lifts
-exercise_names <- c("Squat", "Bench Press", "Press", "Deadlift", "Power Clean", "Chin-Ups", "Back Extension")
+exercise_names <- c("Squat", "Bench Press", "Press", "Deadlift", "Power Clean", "Chin Ups", "Back Extension")
 
 # color palate for lift exercises
 color_exercise <- c(
@@ -14,7 +14,7 @@ color_exercise <- c(
   "Press" = "#6aa84f",
   "Deadlift" = "#3c78d8",
   "Power Clean" = "#000000",
-  "Chin-Ups" = "#000000",
+  "Chin Ups" = "#000000",
   "Back Extension" = "#000000"
 )
 
