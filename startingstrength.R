@@ -45,6 +45,7 @@ plot_t_basic <- function(df){
   df %>% 
     ggplot(aes(x = date_time, y = weight, group = exercise, color = exercise)) +
     geom_line() +
+    geom_point() +
     theme_cowplot() +
     scale_color_manual(values = color_exercise) +
     ylab("Weight (lbs)") +
