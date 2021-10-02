@@ -18,6 +18,19 @@ color_exercise <- c(
   "Back Extension" = "#000000"
 )
 
+# programming reps
+reps <- list(
+  "general" = c(5, 5, 3, 2, 5),
+  "power" = c(5, 5, 3, 2, 3)
+)
+
+# programming sets
+sets <- list(
+  "general" = c(2, 1, 1, 1, 3),
+  "deadlift" = c(2, 1, 1, 1, 1),
+  "power" = c(2, 1, 1, 1, 5)
+)
+
 
 # load url
 url <- "https://docs.google.com/spreadsheets/d/1F2IPfClwYT3qm4VbRAwbtanyX0AFURBW-uvPVcoMV-8/edit?usp=sharing"
@@ -45,7 +58,10 @@ plot_t_basic <- function(df){
   df %>% 
     ggplot(aes(x = date_time, y = weight, group = exercise, color = exercise)) +
     geom_line() +
-    geom_point() +
+    geom_point(
+      # To-Do: point shape conditional to whether completed workout reps or not
+      # aes(shape = factor(ifelse(reps == 5, 1, 2), levels = 1:2, labels = c("Complete", "Incomplete")))
+      ) +
     theme_cowplot() +
     scale_color_manual(values = color_exercise) +
     ylab("Weight (lbs)") +
