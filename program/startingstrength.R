@@ -2,7 +2,7 @@ library(tidyverse)
 library(gsheet) # https://cran.r-project.org/web/packages/gsheet/gsheet.pdf
 library(cowplot)
 source("program/fun_save_png.R")
-
+source("program/plot_t.R")
 
 # exercises lifts
 exercise_names <- c("Squat", "Bench Press", "Press", "Deadlift", "Power Clean", "Chin Ups", "Back Extension")
@@ -51,32 +51,6 @@ df_format <- df_data %>%
   ) %>% 
   # remove first set with empty barbell (45 lb)
   dplyr::filter(weight != 45)
-
-
-# function to create basic plot
-plot_t_basic <- function(df){
-  df %>% 
-    ggplot(aes(x = date_time, y = weight, group = exercise, color = exercise)) +
-    geom_line() +
-    geom_point(
-      # To-Do: point shape conditional to whether completed workout reps or not
-      # aes(shape = factor(ifelse(reps == 5, 1, 2), levels = 1:2, labels = c("Complete", "Incomplete")))
-      ) +
-    theme_cowplot() +
-    scale_color_manual(values = color_exercise) +
-    ylab("Weight (lbs)") +
-    xlab("Date") +
-    theme(
-      legend.position = "top",
-      legend.title = element_blank()
-    )
-}
-
-# function to plot by facets
-plot_t_facet <- function(p_t_basic) {
-  p_t_basic +
-    facet_wrap(facets = "exercise", ncol = 1, scales = "free_y")
-}
 
 
 # Plot w/Warm Ups
