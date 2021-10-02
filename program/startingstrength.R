@@ -1,7 +1,7 @@
 library(tidyverse)
 library(gsheet) # https://cran.r-project.org/web/packages/gsheet/gsheet.pdf
 library(cowplot)
-source("fun_save_png.R")
+source("program/fun_save_png.R")
 
 
 # exercises lifts
@@ -83,19 +83,19 @@ plot_t_facet <- function(p_t_basic) {
 
   ## create basic plot
   p_str_time <- df_format %>% plot_t_basic()
-  save_png("./strength_timeline.png", p_str_time)
+  save_png("./visualization/strength_timeline.png", p_str_time)
   
   ## create facet plot
   p_str_time_facet <- p_str_time %>% plot_t_facet()
-  save_png("./strength_timeline_facet.png", p_str_time_facet, dim_h = 10)
+  save_png("./visualization/strength_timeline_facet.png", p_str_time_facet, dim_h = 10)
   
 
 # Plot Max
   
   ## create basic plot
   p_str_time_max <- df_format %>% dplyr::group_by(date, exercise) %>% top_n(n = 1, wt = weight) %>% plot_t_basic()
-  save_png("./strength_timeline_max.png", p_str_time_max)
+  save_png("./visualization/strength_timeline_max.png", p_str_time_max)
   
   ## create facet plot
   p_str_time_max_facet <- p_str_time_max %>% plot_t_facet()
-  save_png("./strength_timeline_max_facet.png", p_str_time_max_facet, dim_h = 10)
+  save_png("./visualization/strength_timeline_max_facet.png", p_str_time_max_facet, dim_h = 10)
