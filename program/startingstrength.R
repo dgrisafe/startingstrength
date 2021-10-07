@@ -47,7 +47,8 @@ df_format <- df_data %>%
   dplyr::mutate(
     exercise = factor(exercise, levels = exercise_names),
     date_time = lubridate::mdy_hms(date_time),
-    date = lubridate::date(date_time)
+    date = lubridate::date(date_time),
+    labels = str_replace_all(str_extract(notes, pattern = "^(.*?)[.!?:,]") , "[[:punct:]]", "")
   ) %>% 
   # remove first set with empty barbell (45 lb)
   dplyr::filter(weight != 45)
@@ -60,16 +61,21 @@ df_format <- df_data %>%
   save_png("./visualization/strength_timeline.png", p_str_time)
   
   ## create facet plot
-  p_str_time_facet <- p_str_time %>% plot_t_facet()
+  p_str_time_facet <- p_str_time %>% plot_t_facet() + 
+    theme(legend.position = "none") + 
+    ggrepel::geom_label_repel(aes(label = labels), size = 2)
   save_png("./visualization/strength_timeline_facet.png", p_str_time_facet, dim_h = 10)
   
 
 # Plot Max
   
-  ## create basic plot
-  p_str_time_max <- df_format %>% dplyr::group_by(date, exercise) %>% top_n(n = 1, wt = weight) %>% plot_t_basic()
+  ## create basic plot max
+  p_str_time_max <- df_format %>% dplyr::group_by(date, exercise) %>% top_n(n = 1, wt = weight) %>% plot_t_basic() 
   save_png("./visualization/strength_timeline_max.png", p_str_time_max)
   
-  ## create facet plot
-  p_str_time_max_facet <- p_str_time_max %>% plot_t_facet()
+  ## create facet plot max
+  p_str_time_max_facet <- p_str_time_max %>% 
+    plot_t_facet() + 
+    theme(legend.position = "none") + 
+    ggrepel::geom_label_repel(aes(label = labels), size = 2)
   save_png("./visualization/strength_timeline_max_facet.png", p_str_time_max_facet, dim_h = 10)
